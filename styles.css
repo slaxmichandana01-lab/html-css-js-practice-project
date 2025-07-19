@@ -1,0 +1,149 @@
+:root {
+  --bg-color: #f0f2f5;
+  --text-color: #333;
+  --card-color: white;
+  --accent-color: #4b6cb7;
+  --hover-color: #3551a2;
+}
+
+body.dark {
+  --bg-color: #1c1c1c;
+  --text-color: #eee;
+  --card-color: #2c2c2c;
+  --accent-color: #8e44ad;
+  --hover-color: #6c3483;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--accent-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a, nav button {
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+nav a:hover, nav button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+main.grid-container {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  flex: 1;
+}
+
+.card {
+  background: var(--card-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  animation: fadeIn 0.7s ease-in;
+}
+
+form label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--hover-color);
+}
+
+ul#taskList {
+  list-style-type: none;
+  margin-top: 1rem;
+}
+
+ul#taskList li {
+  background: #eaeaea;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.dark ul#taskList li {
+  background: #444;
+  color: white;
+}
+
+ul#taskList li button {
+  background: #e74c3c;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
